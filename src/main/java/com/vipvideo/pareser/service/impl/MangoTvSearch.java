@@ -1,6 +1,7 @@
 package com.vipvideo.pareser.service.impl;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -19,7 +20,7 @@ public class MangoTvSearch implements SearchService{
 	
 
 	@Override
-	public String searchMovie(String moviename) {
+	public List<Object> searchMovie(String moviename) {
 		try {
 			Document document = Jsoup.connect(mangoUrl+moviename).get();
 			Elements resultlist =document.select("div.search-resultlist");
