@@ -43,10 +43,10 @@ public class TenXunTvSearch implements SearchService{
 							if(result_btn_line!=null) {
 								Element aelemtnElement=result_btn_line.selectFirst("a.btn_primary.btn_primary_lg");
 								Map<String,Object> childmap3=new HashMap<>();
-								childmap3.put("series-name", aelemtnElement.text());
-								childmap3.put("series-href", aelemtnElement.attr("href"));
-								childmap.put("movie-name", item.selectFirst("div._infos").selectFirst("h2.result_title").selectFirst("a").text());
-								childmap.put("movie-data", childmap3);
+								childmap3.put("seriesName", aelemtnElement.text());
+								childmap3.put("seriesHref", aelemtnElement.attr("href"));
+								childmap.put("movieName", item.selectFirst("div._infos").selectFirst("h2.result_title").selectFirst("a").text());
+								childmap.put("movieData", childmap3);
 								list.add(childmap);
 							}
 						}
@@ -59,12 +59,12 @@ public class TenXunTvSearch implements SearchService{
 						List<Object> chiList=new ArrayList<Object>();
 						for(Element itemli:itemElements) {
 							Map<String,Object> childmap4=new HashMap<>();
-							childmap4.put("series-name", itemli.selectFirst("a").text());
-							childmap4.put("series-href", itemli.selectFirst("a").attr("href"));
+							childmap4.put("seriesName", itemli.selectFirst("a").text());
+							childmap4.put("seriesHref", itemli.selectFirst("a").attr("href"));
 							chiList.add(childmap4);
 						}
-						childmap2.put("movie-name", item.selectFirst("div._infos").selectFirst("h2.result_title").selectFirst("a").text());
-						childmap2.put("movie-data", chiList);
+						childmap2.put("movieName", item.selectFirst("div._infos").selectFirst("h2.result_title").selectFirst("a").text());
+						childmap2.put("movieData", chiList);
 						list.add(childmap2);
 					
 							

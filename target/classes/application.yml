@@ -1,3 +1,21 @@
+spring: 
+  redis: 
+    host: 121.40.32.71
+    port: 6379 
+    password: 
+    timeout: 10000
+    maxIdle: 300
+    maxTotal: 1000
+    maxWaitMillis: 1000
+    minEvictableIdleTimeMillis: 300000
+    numTestsPerEvictionRun: 1024
+    timeBetweenEvictionRunsMillis: 30000
+    testOnBorrow: true
+    testWhileIdle: true
+
+server: 
+   port: 9876
+
 app: 
    searchurl: 
       mangguotv: https://so.mgtv.com/so/k-

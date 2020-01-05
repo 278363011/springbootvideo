@@ -44,11 +44,11 @@ public class AiqiyiSearch implements SearchService{
 							if(aElement!=null) {
 								Map<String,Object> childmap=new HashMap<>();
 								Map<String,String> childmap3=new HashMap<>();
-								childmap3.put("series-name", aElement.text());
-								childmap3.put("series-href", aElement.attr("href"));
+								childmap3.put("seriesName", aElement.text());
+								childmap3.put("seriesHref", aElement.attr("href"));
 								
-								childmap.put("movie-name", picbox.attr("data-searchpingback-albumname"));
-								childmap.put("movie-data", childmap3);
+								childmap.put("movieName", picbox.attr("data-searchpingback-albumname"));
+								childmap.put("movieData", childmap3);
 								if(childmap!=null&&childmap.size()>0) {
 									list.add(childmap);
 								}
@@ -59,13 +59,13 @@ public class AiqiyiSearch implements SearchService{
 							List<Object> chiList=new ArrayList<Object>();
 							for(Element li:liListElements) {
 								Map<String,Object> childmap4=new HashMap<>();
-								childmap4.put("series-name", li.selectFirst("a").attr("title"));
-								childmap4.put("series-href", li.selectFirst("a").attr("href"));
+								childmap4.put("seriesName", li.selectFirst("a").attr("title"));
+								childmap4.put("seriesHref", li.selectFirst("a").attr("href"));
 								chiList.add(childmap4);
 							}
 							if(chiList.size()>0) {
-								childmap2.put("movie-name", picbox.attr("data-searchpingback-albumname"));
-								childmap2.put("movie-data", chiList);
+								childmap2.put("movieName", picbox.attr("data-searchpingback-albumname"));
+								childmap2.put("movieData", chiList);
 							}
 							if(childmap2!=null&&childmap2.size()>0) {
 								list.add(childmap2);
